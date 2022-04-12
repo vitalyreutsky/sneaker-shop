@@ -1,0 +1,15 @@
+.nav {
+  &__list {
+    display: flex;
+    align-self: center;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-right: $main-offset;
+    }
+  }
+  &__link {
+    font: $small-font;
+    color: $color-white;
+  }
+}

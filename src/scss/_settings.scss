@@ -10,7 +10,7 @@ html {
 
 .page {
   height: 100%;
-  font-family: var(--font-family, sans-serif);
+  font-family: $font-family;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -80,8 +80,14 @@ a {
 
 .container {
   margin: 0 auto;
-  padding: 0 var(--container-offset);
-  max-width: var(--container-width);
+  padding: 0 $container-offset;
+  max-width: $content-width;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: $grid-gap;
 }
 
 .js-focus-visible :focus:not(.focus-visible) {

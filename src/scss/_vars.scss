@@ -1,12 +1,16 @@
-// если вы хотите использовать sass-переменные - удалите root
-// colors
-:root {
-  // base
-  --font-family: "Open Sans", sans-serif;
-  --content-width: 1170px;
-  --container-offset: 15px;
-  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+$font-family: "Muller", san-serif;
+$content-width: 1110px;
+$container-offset: 15px;
 
-  // colors
-  --light-color: #fff;
-}
+//отступы
+$grid-gap: 20px;
+$main-offset: 40px;
+
+//цвета
+$color-eastbay: #484283;
+$color-white: #fff;
+$color-accernt: #f14f4f;
+
+//шрифты
+$middle-high-font: 700 30px / 140% $font-family;
+$small-font: 400 14px / 140% $font-family;
