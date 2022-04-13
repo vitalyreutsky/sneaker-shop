@@ -4,8 +4,10 @@ $container-offset: 15px;
 
 //отступы
 $grid-gap: 20px;
+$small-offset: 10px;
 $main-offset: 40px;
 $second-offset: 20px;
+$big-offset: 60px;
 
 //цвета
 $color-eastbay: #484283;
@@ -13,9 +15,15 @@ $color-white: #fff;
 $color-accent: #f14f4f;
 $color-accent-hover: #cc4949;
 $color-border: rgba(255, 255, 255, 0.5);
+$color-main: #444b58;
+$color-main-hover: #31343c;
+$color-bg: #fff4ee;
+$color-cameo: #dbbba9;
 
 //шрифты
-$middle-high-font: 700 30px / 140% $font-family;
-$small-font: 400 14px / 140% $font-family;
-$middle-font: 400 16px / 140% $font-family;
-$middle-font-sm: 600 16px / 140% $font-family;
+$middle-high-bold: 700 30px / 140% $font-family;
+$prehigh-regular: 600 20px / 20px $font-family;
+$prehigh-book: 400 24px / 24px $font-family;
+$middle-book: 400 16px / 140% $font-family;
+$middle-regular: 600 16px / 140% $font-family;
+$small-book: 400 14px / 140% $font-family;

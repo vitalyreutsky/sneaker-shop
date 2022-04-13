@@ -49,13 +49,44 @@ a {
 .btn {
   padding: 22px 47px;
   border-radius: 4px;
-  font: $middle-font-sm;
+  font: $middle-regular;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
   &--primary {
     color: $color-white;
     background-color: $color-accent;
     &:hover {
       background-color: $color-accent-hover;
+    }
+  }
+}
+
+.title {
+  font: $middle-high-bold;
+  color: $color-main;
+  margin: 0;
+  margin-bottom: $main-offset;
+}
+
+.custom-checkbox {
+  @include custom-checkbox;
+  &__content {
+    font: $middle-book;
+    color: $color-main;
+    padding-left: 35px;
+    &::before {
+      top: -3px;
+      border-color: $color-cameo;
+      border-radius: 4px;
+      width: 24px;
+      height: 24px;
+    }
+
+    &::after {
+      top: -3px;
+      background-image: url("../img/check.svg");
+      background-size: 15px 12px;
+      width: 24px;
+      height: 24px;
     }
   }
 }

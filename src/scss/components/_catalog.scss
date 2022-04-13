@@ -1,0 +1,39 @@
+.catalog {
+  padding: $big-offset 0;
+  &__left {
+    grid-column: 3 span;
+    background-color: $color-bg;
+    border-radius: 4px;
+    padding: $second-offset;
+  }
+  &__grid {
+    grid-column: 9 span;
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-bottom: $second-offset;
+    font: $prehigh-book;
+    color: $color-main;
+  }
+  &__caption {
+    display: block;
+    margin-bottom: $small-offset;
+    font: $middle-book;
+    color: $color-main;
+  }
+  &__prop {
+    margin-bottom: $second-offset;
+  }
+  &__prop-checkboxes {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.catalog-list {
+  grid-template-columns: repeat(9, 1fr);
+  &__item {
+    grid-column: 3 span;
+  }
+}
