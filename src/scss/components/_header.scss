@@ -3,8 +3,22 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1;
   &__container {
+    $paddings: 15px;
     align-items: center;
+    padding: $second-offset $paddings;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: calc(100% - $paddings * 2);
+      height: 1px;
+      background: $color-border;
+      transform: translateX(-50%);
+    }
   }
   &__left {
     grid-column: 2 span;

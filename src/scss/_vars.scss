@@ -1,16 +1,21 @@
-$font-family: "Muller", san-serif;
+$font-family: "Intro";
 $content-width: 1110px;
 $container-offset: 15px;
 
 //отступы
 $grid-gap: 20px;
 $main-offset: 40px;
+$second-offset: 20px;
 
 //цвета
 $color-eastbay: #484283;
 $color-white: #fff;
-$color-accernt: #f14f4f;
+$color-accent: #f14f4f;
+$color-accent-hover: #cc4949;
+$color-border: rgba(255, 255, 255, 0.5);
 
 //шрифты
 $middle-high-font: 700 30px / 140% $font-family;
 $small-font: 400 14px / 140% $font-family;
+$middle-font: 400 16px / 140% $font-family;
+$middle-font-sm: 600 16px / 140% $font-family;
