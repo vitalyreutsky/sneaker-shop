@@ -1,0 +1,28 @@
+.contacts {
+  padding: $big-offset;
+  background-color: #f3f6f6;
+  &__title {
+    margin-bottom: $big-offset;
+  }
+  &__item {
+    font-style: normal;
+    margin-bottom: $main-offset;
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-bottom: $main-offset;
+    font: $small-book;
+    text-transform: uppercase;
+    color: $color-grey;
+  }
+  &__phone {
+    display: inline-block;
+    margin-bottom: $small-offset;
+    font: $middle-high-bold;
+    color: $color-main;
+  }
+  &__adress {
+    display: block;
+  }
+}
