@@ -1,0 +1,38 @@
+.team {
+  position: relative;
+  padding: $big-offset 0;
+  background-color: $color-eastbay;
+  &__figure {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &__title {
+    color: $color-white;
+  }
+  &__list {
+    position: relative;
+    z-index: 3;
+    gap: $main-offset $second-offset;
+  }
+  &__item {
+    grid-column: 4 span;
+  }
+  &__img {
+    overflow: hidden;
+    border-radius: 4px;
+    margin-bottom: $second-offset;
+  }
+  &__subtitle {
+    display: block;
+    margin-bottom: $second-offset;
+    color: $color-white;
+    font: $prehigh-book;
+  }
+
+  &__post {
+    display: block;
+    color: $color-white;
+    font: $middle-book;
+  }
+}
