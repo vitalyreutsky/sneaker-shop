@@ -58,6 +58,25 @@ a {
       background-color: $color-accent-hover;
     }
   }
+
+  &--secondary {
+    color: $color-white;
+    background-color: $color-main;
+    &:hover {
+      background-color: $color-main-hover;
+    }
+  }
+
+  &--thirdly {
+    padding: 13px 30px;
+    color: $color-main;
+    background: transparent;
+    border: 1px solid $color-main;
+    &:hover {
+      color: $color-white;
+      background-color: $color-main;
+    }
+  }
 }
 
 .title {
