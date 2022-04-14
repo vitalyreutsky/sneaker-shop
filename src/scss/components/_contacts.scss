@@ -1,12 +1,22 @@
 .contacts {
   padding: $big-offset;
   background-color: #f3f6f6;
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
   &__title {
     margin-bottom: $big-offset;
   }
   &__item {
     font-style: normal;
     margin-bottom: $main-offset;
+  }
+
+  &__text {
+    margin-right: $second-offset;
+    width: calc(100% - (600px + $second-offset));
   }
 
   &__subtitle {
@@ -24,5 +34,9 @@
   }
   &__adress {
     display: block;
+  }
+  &__map {
+    width: 680px;
+    height: 500px;
   }
 }

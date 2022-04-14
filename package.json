@@ -59,6 +59,8 @@
     "graph-modal": "^1.0.3",
     "graph-tabs": "^1.0.0",
     "inputmask": "^5.0.7",
+    "instafeed.js": "^2.0.0",
+    "instagram-feed": "^1.0.4",
     "just-validate": "^3.3.3",
     "nouislider": "^15.5.1",
     "rellax": "^1.12.1",

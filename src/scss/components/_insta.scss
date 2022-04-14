@@ -1,0 +1,87 @@
+.instagram {
+  padding: $big-offset;
+  &__container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__left {
+    border-radius: 4px;
+    width: 380px;
+    flex-shrink: 0;
+    margin-right: $small-offset;
+    background-color: $color-eastbay;
+  }
+
+  &__title {
+    color: $color-white;
+    margin-bottom: $second-offset;
+  }
+
+  &__descr {
+    text-align: center;
+    max-width: 260px;
+    margin: 0 auto;
+    margin-bottom: $main-offset;
+    color: $color-white;
+    font: $middle-book;
+  }
+
+  &__right {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: calc(100% - (380px + $small-offset));
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 160px);
+    gap: 15px;
+  }
+
+  &__item {
+    overflow: hidden;
+    border-radius: 4px;
+
+    &:nth-child(3) {
+      grid-column: 2 span;
+      grid-row: 2 span;
+    }
+
+    &:nth-child(2) {
+      grid-row: 2;
+    }
+  }
+}
+
+.callback-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $main-offset $second-offset;
+}
+.form {
+  &__input {
+    padding: $second-offset;
+    margin-bottom: $second-offset;
+    font: $middle-book;
+    width: 100%;
+    height: 60px;
+    border-radius: 4px;
+    color: $color-main;
+    background-color: $color-white;
+    outline: none;
+    &::placeholder {
+      color: $color-grey;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+  }
+}
