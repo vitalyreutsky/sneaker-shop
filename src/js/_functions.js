@@ -29,10 +29,6 @@ console.log(mobileCheck());
 // Реализация включения скролла (не забудьте вызвать функцию)
 // import { enableScroll } from './functions/enable-scroll';
 
-// Реализация модального окна
-// import GraphModal from 'graph-modal';
-// const modal = new GraphModal();
-
 // Реализация табов
 // import GraphTabs from 'graph-tabs';
 // const tabs = new GraphTabs('tab');
@@ -42,13 +38,6 @@ console.log(mobileCheck());
 
 // Подключение плагина кастом-скролла
 // import 'simplebar';
-
-// Подключение свайпера
-// import Swiper, { Navigation, Pagination } from 'swiper';
-// Swiper.use([Navigation, Pagination]);
-// const swiper = new Swiper(el, {
-//   slidesPerView: 'auto',
-// });
 
 // Подключение анимаций по скроллу
 // import AOS from 'aos';
