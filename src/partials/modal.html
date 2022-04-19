@@ -1,12 +1,17 @@
 <div class="graph-modal modal">
   <div
-    class="graph-modal__container modal__container"
+    class="graph-modal__container modal__container prod-modal"
     role="dialog"
     aria-modal="true"
     data-graph-target="prod-modal"
   >
-    <button class="btn-reset modal__close" aria-label="Закрыть модальное окно">
-      &times;
+    <button
+      class="btn-reset modal__close graph-modal__close"
+      aria-label="Закрыть модальное окно"
+    >
+      <svg class="prod-modal__close">
+        <use xlink:href="img/sprite.svg#close"></use>
+      </svg>
     </button>
     <div class="modal-content">
       <div class="prod-modal__top">
@@ -122,13 +127,7 @@
           </div>
         </div>
       </div>
-      <div class="prod-modal__video">
-        <iframe
-          src="https://www.youtube.com/embed/HGiDY4NuTaM"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
+      <div class="prod-modal__video"></div>
     </div>
   </div>
 </div>

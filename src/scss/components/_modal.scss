@@ -6,6 +6,23 @@
   &__top {
     display: flex;
     justify-content: space-between;
+    margin-bottom: $main-offset;
+  }
+
+  &__bottom {
+    margin-bottom: $main-offset;
+  }
+
+  &__video {
+    width: 100%;
+    height: 450px;
+    iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+      object-fit: cover;
+    }
   }
 }
 
@@ -71,10 +88,6 @@
     color: $color-main;
   }
 
-  &__sizes {
-    margin-bottom: $second-offset;
-  }
-
   &__price {
     display: flex;
     align-items: center;
@@ -105,15 +118,20 @@
   flex-wrap: wrap;
 
   &__item {
+    margin-bottom: $second-offset;
     &:not(:last-child) {
       margin-right: $second-offset;
     }
   }
 
   &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid $color-grey;
     border-radius: 4px;
-    padding: 6px 27px;
+    padding: 6px 0px;
+    width: 70px;
     font: $small-book;
     counter-reset: $color-main;
   }
@@ -165,5 +183,39 @@
     &:not(:last-child) {
       margin-bottom: $small-offset;
     }
+  }
+}
+
+.prod-modal__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  fill: $color-main;
+  width: 30px;
+  height: 30px;
+}
+
+.prod-bottom {
+  display: flex;
+
+  &__column {
+    width: calc(50% - ($second-offset) / 2);
+    &:first-child {
+      margin-right: $second-offset;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: $second-offset;
+    font: $prehigh-book;
+    color: $color-main;
+  }
+
+  &__descr {
+    margin: 0;
+    max-width: 450px;
+    font: $middle-book;
+    color: $color-main;
   }
 }
