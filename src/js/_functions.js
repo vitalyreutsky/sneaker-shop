@@ -3,7 +3,6 @@
 
 // Определение операционной системы на мобильных
 import { mobileCheck } from "./functions/mobile-check";
-console.log(mobileCheck());
 
 // Определение ширины экрана
 // import { isMobile, isTablet, isDesktop } from './functions/check-viewport';
@@ -35,9 +34,6 @@ console.log(mobileCheck());
 
 // Получение высоты шапки сайта (не забудьте вызвать функцию)
 // import { getHeaderHeight } from './functions/header-height';
-
-// Подключение плагина кастом-скролла
-// import 'simplebar';
 
 // Подключение анимаций по скроллу
 // import AOS from 'aos';

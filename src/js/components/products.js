@@ -3,7 +3,7 @@ import GraphModal from "graph-modal";
 import Swiper, { Navigation, Pagination } from "swiper";
 
 Swiper.use([Navigation, Pagination]);
-const prodsSlider = new Swiper(".modal-slider__container", {
+const prodSlider = new Swiper(".modal-slider__container", {
   slidesPerView: 1,
   spaceBetween: 20,
 });
@@ -38,6 +38,7 @@ if (catalogList) {
       })
       .then((data) => {
         dataLength = data.length;
+
         catalogList.innerHTML = "";
 
         for (let i = 0; i < dataLength; i++) {
@@ -45,53 +46,39 @@ if (catalogList) {
             let item = data[i];
 
             catalogList.innerHTML += `
-          <li class="catalog-list__item">
-            <article class="product">
-              <div class="product__image">
-                <picture>
-                  <source srcset="${item.mainImage}" type="image/avif" />
-                  <source srcset="${item.mainImage}" type="image/webp" />
-                  <img
-                    loading="lazy"
-                    src="${item.mainImage}"
-                    class="image"
-
-                    alt="${item.title}"
-                  />
-                </picture>
-                <div class="product__btns">
-                  <button
-                    class="btn-reset product__btn"
-                    aria-label="Показать информацию о товаре"
-                    data-graph-path="prod-modal"
-                    data-id="${item.id}"
-                  >
-                    <svg>
-                      <use xlink:href="img/sprite.svg#eye"></use>
-                    </svg>
-                  </button>
-                  <button
-                    class="btn-reset product__btn"
-                    aria-label="Добавить товар в корзину"
-                  >
-                    <svg>
-                      <use xlink:href="img/sprite.svg#cart"></use>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <h3 class="product__title">${item.title}</h3>
-              <span class="product__price">${normalPrice(item.price)} $</span>
-            </article>
-          </li>
+              <li class="catalog-list__item">
+                <article class="product">
+                  <div class="product__image">
+                    <img src="${item.mainImage}" alt="${item.title}">
+                    <div class="product__btns">
+                      <button class="btn-reset product__btn" data-graph-path="prod-modal" data-id="${
+                        item.id
+                      }" aria-label="Показать информацию о товаре">
+                        <svg>
+                          <use xlink:href="img/sprite.svg#eye"></use>
+                        </svg>
+                      </button>
+                      <button class="btn-reset product__btn" aria-label="Добавить товар в корзину">
+                        <svg>
+                          <use xlink:href="img/sprite.svg#cart"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <h3 class="product__title">${item.title}</h3>
+                  <span class="product__price">${normalPrice(
+                    item.price
+                  )} р</span>
+                </article>
+              </li>
             `;
           }
         }
       })
       .then(() => {
         const productTitle = document.querySelectorAll(".product__title");
-        productTitle.forEach((title) => {
-          clamp(title, { clamp: "22px" });
+        productTitle.forEach((el) => {
+          clamp(el, { clamp: "22px" });
         });
 
         const modal = new GraphModal({
@@ -99,6 +86,8 @@ if (catalogList) {
             const openBtnId = modal.previousActiveElement.dataset.id;
 
             loadModalData(openBtnId);
+
+            prodSlider.update();
           },
         });
       });
@@ -121,27 +110,27 @@ if (catalogList) {
 
         for (let dataItem of data) {
           if (dataItem.id == id) {
-            console.log(dataItem);
-
-            const slides = dataItem.gallery.map((image) => {
+            const slides = dataItem.gallery.map((image, idx) => {
               return `
-              <div class="swiper-slide">
-                <img src="${image}" alt="">
-              </div>
+                <div class="swiper-slide" data-index="${idx}">
+                  <img src="${image}" alt="">
+                </div>
               `;
             });
 
             const preview = dataItem.gallery.map((image, idx) => {
               return `
-              <div class="modal-preview__item" data-index="${idx}">
-                <img src="${image}" alt="">
-              </div>
+                <div class="modal-preview__item ${
+                  idx === 0 ? "modal-preview__item--active" : ""
+                }" tabindex="0" data-index="${idx}">
+                  <img src="${image}" alt="">
+                </div>
               `;
             });
 
             const sizes = dataItem.sizes.map((size, idx) => {
               return `
-                 <li class="modal-sizes__item">
+                <li class="modal-sizes__item">
                   <button class="btn-reset modal-sizes__btn">${size}</button>
                 </li>
               `;
@@ -151,38 +140,38 @@ if (catalogList) {
             prodModalPreview.innerHTML = preview.join("");
 
             prodModalInfo.innerHTML = `
-            <h3 class="modal-info__title">
-              ${dataItem.title}
-            </h3>
-            <div class="modal-info__rate">
-              <svg>
-                <use xlink:href="img/sprite.svg#rate"></use>
-              </svg>
-              <svg>
-                <use xlink:href="img/sprite.svg#rate"></use>
-              </svg>
-              <svg>
-                <use xlink:href="img/sprite.svg#rate"></use>
-              </svg>
-              <svg>
-                <use xlink:href="img/sprite.svg#rate"></use>
-              </svg>
-              <svg>
-                <use xlink:href="img/sprite.svg#rate"></use>
-              </svg>
-            </div>
-            <div class="modal-info__sizes">
-              <span class="modal-info__subtitle">Выберите размер</span>
-              <ul class="list-reset modal-info__sizes-list modal-sizes">${sizes.join(
-                ""
-              )}</ul>
-            </div>
-            <div class="modal-info__price">
-              <span class="modal-info__current-price">${dataItem.price} $</span>
-              <span class="modal-info__old-price">${
-                dataItem.oldPrice ? dataItem.oldPrice + "$" : ""
-              }</span>
-            </div>
+              <h3 class="modal-info__title">${dataItem.title}</h3>
+              <div class="modal-info__rate">
+                 <svg>
+                  <use xlink:href="img/sprite.svg#rate"></use>
+                </svg>
+                <svg>
+                  <use xlink:href="img/sprite.svg#rate"></use>
+                </svg>
+                <svg>
+                  <use xlink:href="img/sprite.svg#rate"></use>
+                </svg>
+                <svg>
+                  <use xlink:href="img/sprite.svg#rate"></use>
+                </svg>
+                <svg>
+                  <use xlink:href="img/sprite.svg#rate"></use>
+                </svg>
+              </div>
+              <div class="modal-info__sizes">
+                <span class="modal-info__subtitle">Выберите размер</span>
+                <ul class="list-reset modal-info__sizes-list modal-sizes">
+                  ${sizes.join("")}
+                </ul>
+              </div>
+              <div class="modal-info__price">
+                <span class="modal-info__current-price">${
+                  dataItem.price
+                } р</span>
+                <span class="modal-info__old-price">${
+                  dataItem.oldPrice ? dataItem.oldPrice + "р" : ""
+                }</span>
+              </div>
             `;
 
             prodModalDescr.textContent = dataItem.description;
@@ -198,17 +187,41 @@ if (catalogList) {
             if (dataItem.video) {
               prodModalVideo.style.display = "block";
               prodModalVideo.innerHTML = `
-             <iframe
-              src="${dataItem.video}"
-                allow="accelerometer; autoplay; clipboard-w rite; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-             ></iframe>
-            `;
+                <iframe src="${dataItem.video}"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+              `;
             } else {
               prodModalVideo.style.display = "none";
             }
           }
         }
+      })
+      .then(() => {
+        prodSlider.update();
+
+        prodSlider.on("slideChangeTransitionEnd", function () {
+          let idx = document.querySelector(".swiper-slide-active").dataset
+            .index;
+          document.querySelectorAll(".modal-preview__item").forEach((el) => {
+            el.classList.remove("modal-preview__item--active");
+          });
+          document
+            .querySelector(`.modal-preview__item[data-index="${idx}"]`)
+            .classList.add("modal-preview__item--active");
+        });
+
+        document.querySelectorAll(".modal-preview__item").forEach((el) => {
+          el.addEventListener("click", (e) => {
+            const idx = parseInt(e.currentTarget.dataset.index);
+            document.querySelectorAll(".modal-preview__item").forEach((el) => {
+              el.classList.remove("modal-preview__item--active");
+            });
+            e.currentTarget.classList.add("modal-preview__item--active");
+
+            prodSlider.slideTo(idx);
+          });
+        });
       });
   };
 
