@@ -130,4 +130,99 @@
       <div class="prod-modal__video"></div>
     </div>
   </div>
+
+  <div
+    class="graph-modal__container modal__container cart-modal"
+    role="dialog"
+    aria-modal="true"
+    data-graph-target="cart-modal"
+  >
+    <button
+      class="btn-reset modal__close graph-modal__close"
+      aria-label="Закрыть модальное окно"
+    >
+      <svg class="prod-modal__close">
+        <use xlink:href="img/sprite.svg#close"></use>
+      </svg>
+    </button>
+    <div class="modal-content">
+      <div class="cart-modal__top">
+        <h2 class="cart-modal__title">Оформление заказа</h2>
+        <span class="cart-modal__order-number">Заказ 345434</span>
+      </div>
+      <div class="cart-modal-order">
+        <div class="cart-modal-order__top">
+          <div class="cart-modal-order__quantity">
+            Товаров в заказе: <span>3 шт</span>
+          </div>
+          <div class="cart-modal-order__summ">
+            Общая сумма заказа: <span>0 $</span>
+          </div>
+        </div>
+        <div class="cart-modal-order__content">
+          <button class="btn-reset cart-modal-order__show">
+            Состав заказа
+            <svg class="">
+              <use xlink:href="img/sprite.svg#angle"></use>
+            </svg>
+          </button>
+          <ul class="cart-modal-order__list list-reset">
+            <li class="cart-modal-order__item">
+              <article class="cart-modal-order__product cart-modal-product">
+                <div class="cart-modal-product__image">
+                  <picture>
+                    <source srcset="img/image.avif" type="image/avif" />
+                    <source srcset="img/image.webp" type="image/webp" />
+                    <img
+                      loading="lazy"
+                      src="img/image.png"
+                      class="image"
+                      alt=""
+                    />
+                  </picture>
+                </div>
+                <div class="cart-modal-product__content">
+                  <div class="cart-modal-product__text">
+                    <h3 class="cart-modal-product__title">
+                      Женские кроссовки Puma Force 1 Shadow
+                    </h3>
+                    <span class="cart-modal-product__price">0 $</span>
+                  </div>
+                  <button
+                    class="btn-reset cart-modal-product__delete"
+                    aria-label="Удалить товар"
+                  >
+                    Удалить
+                  </button>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <form action="#" class="form cart-modal-order__form">
+        <input
+          type="text"
+          name="Имя"
+          class="input-reset form__input cart-modal__input"
+          placeholder="Ваше имя"
+        />
+        <input
+          type="tel"
+          name="Телефон"
+          class="input-reset form__input cart-modal__input"
+          placeholder="Номер телефон"
+        />
+        <input
+          type="mail"
+          name="E-mail"
+          class="input-reset form__input cart-modal__input"
+          placeholder="E-mail"
+        />
+        <button class="btn btn-reset form__btn btn--primary cart-modal__btn">
+          Оформить заказ
+        </button>
+      </form>
+    </div>
+  </div>
 </div>

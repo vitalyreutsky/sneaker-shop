@@ -1,0 +1,80 @@
+.cart-modal {
+  border-radius: 4px;
+  padding: $main-offset;
+  width: 700px;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: $second-offset 0 $main-offset 0;
+  }
+
+  &__title {
+    margin: 0;
+    font: $prehigh-regular;
+    font-weight: 700;
+    color: $color-main;
+  }
+
+  &__order-number {
+    font: $small-book;
+    line-height: 14px;
+    color: $color-grey;
+  }
+
+  &__input {
+    background-color: #f6f6f6 !important;
+  }
+  &__btn {
+    margin-top: $second-offset;
+  }
+}
+
+.cart-modal-order {
+  margin-bottom: $main-offset;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 30px;
+
+  &__top {
+    font: $middle-book;
+    line-height: 14px;
+    color: $color-grey;
+    span {
+      font-weight: 700;
+      color: $color-main;
+    }
+  }
+
+  &__quantity {
+    margin-bottom: $second-offset;
+  }
+
+  &__summ {
+    margin-bottom: $second-offset;
+  }
+
+  &__show {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: $second-offset;
+    color: $color-main;
+    svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+      object-fit: cover;
+      margin-left: 5px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__form {
+  }
+}
