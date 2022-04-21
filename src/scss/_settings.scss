@@ -32,7 +32,7 @@ a {
 }
 
 .site-container {
-  overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
+  overflow: hidden;
 }
 
 .is-hidden {
@@ -40,6 +40,7 @@ a {
 }
 
 .btn-reset {
+  outline: none;
   border: none;
   padding: 0;
   background: transparent;
@@ -47,6 +48,7 @@ a {
 }
 
 .btn {
+  outline: none;
   padding: 22px 47px;
   border-radius: 4px;
   font: $middle-regular;
@@ -54,16 +56,30 @@ a {
   &--primary {
     color: $color-white;
     background-color: $color-accent;
-    &:hover {
-      background-color: $color-accent-hover;
+
+    @include for-desktop {
+      &:hover {
+        background-color: $color-accent-hover;
+      }
+    }
+
+    &:active {
+      background-color: $color-btn-active;
     }
   }
 
   &--secondary {
     color: $color-white;
     background-color: $color-main;
-    &:hover {
-      background-color: $color-main-hover;
+
+    @include for-desktop {
+      &:hover {
+        background-color: $color-main-hover;
+      }
+    }
+
+    &:active {
+      background-color: $color-btn-active;
     }
   }
 
@@ -72,11 +88,30 @@ a {
     color: $color-main;
     background: transparent;
     border: 1px solid $color-main;
-    &:hover {
-      color: $color-white;
-      background-color: $color-main;
+
+    @include for-desktop {
+      &:hover {
+        color: $color-white;
+        background-color: $color-main;
+      }
+    }
+
+    &:active {
+      background-color: $color-btn-active;
     }
   }
+}
+
+.btn--primary.js-focus-visible {
+  background-color: $color-accent-hover;
+}
+
+.btn--secondary.js-focus-visible {
+  background-color: $color-main-hover;
+}
+
+.btn--thirdly.js-focus-visible {
+  background-color: $color-main;
 }
 
 .title {
@@ -152,6 +187,10 @@ a {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: $grid-gap;
+
+  @include mobile {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .js-focus-visible :focus:not(.focus-visible) {

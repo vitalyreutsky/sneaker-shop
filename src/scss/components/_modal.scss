@@ -1,3 +1,15 @@
+.modal {
+  @include tablet {
+    &::before {
+      display: none;
+    }
+  }
+
+  @include small-tablet {
+    padding: $small-offset;
+  }
+}
+
 .prod-modal {
   border-radius: 4px;
   padding: $main-offset;
@@ -7,6 +19,10 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: $main-offset;
+
+    @include small-tablet {
+      flex-direction: column;
+    }
   }
 
   &__bottom {
@@ -23,6 +39,15 @@
       border: none;
       object-fit: cover;
     }
+  }
+
+  @include tablet {
+    margin: 0;
+    width: 100%;
+  }
+
+  @include small-tablet {
+    padding: $second-offset;
   }
 }
 
@@ -41,6 +66,12 @@
       height: 450px;
     }
   }
+
+  @include small-tablet {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: $second-offset;
+  }
 }
 
 .modal-info {
@@ -57,10 +88,23 @@
     font: $middle-book;
     line-height: 16px;
     color: $color-grey;
+
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
   &__vendor {
     margin-right: $main-offset;
+
+    @include tablet {
+      margin-right: $small-offset;
+    }
+
+    @include mobile {
+      margin-right: 0;
+      margin-bottom: $second-offset;
+    }
   }
 
   &__quantity {
@@ -109,6 +153,15 @@
   &__order {
     width: 100%;
     margin-top: auto;
+
+    @include small-tablet {
+      margin-top: $main-offset;
+    }
+  }
+
+  @include small-tablet {
+    margin: 0;
+    width: 100%;
   }
 }
 
@@ -162,8 +215,10 @@
       display: block;
     }
 
-    &:hover {
-      opacity: 0.7;
+    @include for-desktop {
+      &:hover {
+        opacity: 0.7;
+      }
     }
 
     &--active {
@@ -208,6 +263,15 @@
     &:first-child {
       margin-right: $second-offset;
     }
+
+    @include small-tablet {
+      width: 100%;
+
+      &:first-child {
+        margin-right: 0;
+        margin-bottom: $main-offset;
+      }
+    }
   }
 
   &__title {
@@ -222,5 +286,15 @@
     max-width: 450px;
     font: $middle-book;
     color: $color-main;
+  }
+
+  @include small-tablet {
+    display: block;
+  }
+}
+
+.modal-content {
+  @include small-tablet {
+    margin-top: $main-offset;
   }
 }

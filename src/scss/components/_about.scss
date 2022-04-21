@@ -3,10 +3,15 @@
   overflow: hidden;
   background-color: $color-eastbay;
   height: 580px;
+
+  @include small-tablet {
+    height: auto;
+    padding: $main-offset 0;
+  }
   &__figure {
     position: absolute;
     top: 0;
-    left: -2%;
+    left: 0;
   }
   &__container {
     position: relative;
@@ -17,10 +22,11 @@
   &__text {
     width: 45%;
     transform: translateY(50px);
-  }
-  &__title {
-    margin-bottom: $second-offset;
-    color: $color-white;
+
+    @include small-tablet {
+      width: 100%;
+      transform: none;
+    }
   }
   &__descr {
     font: $middle-book;
@@ -68,6 +74,14 @@
       top: 0;
       left: 50%;
       transform: rotate(-15deg) translateX(-50%);
+    }
+
+    @include tablet {
+      right: -100px;
+    }
+
+    @include small-tablet {
+      display: none;
     }
   }
 }

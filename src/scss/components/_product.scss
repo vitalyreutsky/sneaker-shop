@@ -12,8 +12,12 @@
     height: 100%;
     background: rgba(255, 255, 255, 0.6);
     opacity: 0;
-    visibility: hidden;
+    //visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+    @include mobile {
+      opacity: 1;
+    }
   }
 
   &__image {
@@ -28,10 +32,12 @@
       object-fit: cover;
     }
 
-    &:hover {
-      .product__btns {
-        opacity: 1;
-        visibility: visible;
+    @include for-desktop {
+      &:hover {
+        .product__btns {
+          opacity: 1;
+          visibility: visible;
+        }
       }
     }
   }
@@ -48,6 +54,12 @@
     color: $color-main;
   }
 
+  &__btns {
+    &--active {
+      opacity: 1;
+    }
+  }
+
   &__btn {
     display: flex;
     align-items: center;
@@ -56,17 +68,30 @@
     height: 80px;
     background-color: $color-main;
     border-radius: 100%;
+    outline: none;
     transition: background-color 0.3s ease-in-out;
     &:first-child {
       margin-right: $main-offset;
     }
+
     svg {
       width: 30px;
       height: 30px;
-      fill: $color-white;
       object-fit: cover;
+      fill: $color-white;
     }
-    &:hover {
+
+    &:focus {
+      background-color: $color-main-hover;
+    }
+
+    @include for-desktop {
+      &:hover {
+        background-color: $color-main-hover;
+      }
+    }
+
+    &:active {
       background-color: $color-main-hover;
     }
 
@@ -92,6 +117,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    @include mobile {
+      width: 60px;
+      height: 60px;
     }
   }
 
@@ -120,6 +150,7 @@
   }
 
   &__delete {
+    flex-shrink: 0;
     width: 20px;
     height: 20px;
     font-size: 0;
@@ -131,6 +162,10 @@
       object-fit: cover;
       pointer-events: none;
     }
+  }
+
+  @include mobile {
+    padding: $small-offset;
   }
 }
 
@@ -187,6 +222,10 @@
       svg {
         display: none;
       }
+    }
+
+    @include mobile {
+      display: block;
     }
   }
 }

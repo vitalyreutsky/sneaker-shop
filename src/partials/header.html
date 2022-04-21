@@ -5,7 +5,7 @@
     </div>
 
     <div class="header__right">
-      <nav class="nav header__nav">
+      <nav class="nav header__nav" data-menu>
         <ul class="nav__list list-reset">
           <li class="nav__item">
             <a href="#" class="nav__link">Каталог</a>
@@ -28,7 +28,7 @@
         </ul>
       </nav>
       <div class="cart header__cart">
-        <button class="btn-reset cart__btn">
+        <button class="btn-reset cart__btn cart__btn--inactive">
           <svg class="">
             <use xlink:href="img/sprite.svg#cart"></use>
           </svg>
@@ -52,6 +52,15 @@
           </div>
         </div>
       </div>
+
+      <button
+        class="burger"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+        data-burger
+      >
+        <span class="burger__line"></span>
+      </button>
     </div>
   </div>
 </header>

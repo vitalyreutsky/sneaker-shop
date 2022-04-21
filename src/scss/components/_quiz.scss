@@ -4,9 +4,22 @@
     border-radius: 4px;
     padding: $main-offset 100px;
     background-color: $color-bg;
+
+    @include small-tablet {
+      padding: $main-offset;
+    }
+
+    @include mobile {
+      padding: $second-offset;
+    }
   }
   &__title {
     margin-bottom: $second-offset;
+
+    @include mobile {
+      font-size: 24px;
+      line-height: 30px;
+    }
   }
 
   &__descr {
@@ -27,16 +40,28 @@
     color: $color-main;
   }
 
+  &__label {
+    display: inline-block;
+    @include mobile {
+      width: 100%;
+    }
+  }
+
   &__message {
     border: none;
     width: 500px;
-    height: 350px;
+    height: 150px;
 
     background-color: $color-white;
     color: $color-cameo;
     padding: $second-offset;
     border-radius: 4px;
     resize: none;
+    outline: none;
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   &__answers {
@@ -45,11 +70,27 @@
     grid-auto-rows: 155px;
     grid-template-columns: repeat(3, 1fr);
     gap: $second-offset 70px;
+
+    @include small-tablet {
+      gap: $second-offset;
+      grid-auto-rows: auto;
+    }
+
+    @include mobile {
+      display: block;
+    }
   }
 
   &__item {
     img {
       margin-bottom: $small-offset;
+    }
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
     }
   }
   &__count {
@@ -81,6 +122,10 @@
     position: absolute;
     top: -2px;
     right: -185px;
+
+    @include small-tablet {
+      display: none;
+    }
   }
 
   &__title {
@@ -101,11 +146,7 @@
     color: $color-white;
   }
 
-  &__input {
-    max-width: 500px;
-  }
-
   &__btn {
-    max-width: 500px;
+    width: 100%;
   }
 }

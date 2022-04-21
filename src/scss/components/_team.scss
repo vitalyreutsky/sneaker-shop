@@ -6,6 +6,9 @@
     position: absolute;
     top: 0;
     right: 0;
+    @include small-tablet {
+      right: -300px;
+    }
   }
   &__title {
     color: $color-white;
@@ -22,6 +25,10 @@
     overflow: hidden;
     border-radius: 4px;
     margin-bottom: $second-offset;
+
+    @include small-tablet {
+      width: 100%;
+    }
   }
   &__subtitle {
     display: block;

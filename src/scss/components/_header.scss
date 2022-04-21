@@ -28,5 +28,59 @@
     display: flex;
     justify-content: flex-end;
     grid-column: 10 span;
+
+    @include tablet {
+      align-items: center;
+    }
+
+    @include mobile {
+      grid-column: 2 span;
+    }
   }
+
+  &__nav {
+    transition: transform 0.3s ease-in-out;
+    @include tablet {
+      transform: translateX(100%);
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 10;
+      height: 100%;
+      width: 50%;
+      background-color: $color-eastbay;
+      padding: $main-offset 0 $second-offset $second-offset;
+
+      .nav__list {
+        flex-direction: column;
+      }
+      .nav__item {
+        &:not(:last-child) {
+          margin-bottom: $second-offset;
+        }
+      }
+      .nav__link {
+        font: $prehigh-regular;
+      }
+    }
+  }
+}
+
+.burger {
+  @include burger;
+  display: none;
+
+  @include tablet {
+    display: block;
+    position: absolute;
+    top: 17px;
+    right: 15px;
+    z-index: 11;
+    color: $color-white;
+    --burger-line-height: 3px;
+  }
+}
+
+.menu--active {
+  transform: translateX(0);
 }

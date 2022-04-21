@@ -8,6 +8,10 @@
     align-items: center;
     justify-content: space-between;
     margin: $second-offset 0 $main-offset 0;
+
+    @include small-tablet {
+      display: block;
+    }
   }
 
   &__title {
@@ -29,6 +33,12 @@
   &__btn {
     margin-top: $second-offset;
   }
+
+  @include small-tablet {
+    padding: $second-offset;
+    width: 100%;
+    max-width: 570px;
+  }
 }
 
 .cart-modal-order {
@@ -41,9 +51,14 @@
     font: $middle-book;
     line-height: 14px;
     color: $color-grey;
+
     span {
       font-weight: 700;
       color: $color-main;
+    }
+
+    @include mobile {
+      font-size: 15px;
     }
   }
 
@@ -88,5 +103,9 @@
     &:not(:last-child) {
       margin-bottom: $second-offset;
     }
+  }
+
+  @include mobile {
+    padding: $small-offset;
   }
 }

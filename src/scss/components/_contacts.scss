@@ -1,10 +1,14 @@
 .contacts {
-  padding: $big-offset;
+  padding: $big-offset 0;
   background-color: #f3f6f6;
   &__container {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
+    @include tablet {
+      flex-wrap: wrap;
+    }
   }
   &__title {
     margin-bottom: $big-offset;
@@ -17,6 +21,12 @@
   &__text {
     margin-right: $second-offset;
     width: calc(100% - (600px + $second-offset));
+
+    @include tablet {
+      margin-right: 0;
+      margin-bottom: $main-offset;
+      width: 100%;
+    }
   }
 
   &__subtitle {
@@ -31,12 +41,40 @@
     margin-bottom: $small-offset;
     font: $middle-high-bold;
     color: $color-main;
+    outline: none;
+    transition: color 0.3s ease-in-out;
+
+    &:focus {
+      color: $color-accent;
+    }
+
+    @include for-desktop {
+      &:hover {
+        color: $color-accent;
+      }
+    }
+
+    &:active {
+      color: $color-accent;
+    }
   }
   &__adress {
     display: block;
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
   &__map {
     width: 680px;
     height: 500px;
+
+    @include tablet {
+      width: 100%;
+    }
+
+    @include mobile {
+      height: 350px;
+    }
   }
 }
