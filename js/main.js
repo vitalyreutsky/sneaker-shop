@@ -3689,22 +3689,22 @@ var quizData = [{
   title: "Какой тип обуви рассматриваете?",
   answer_alias: "type",
   answers: [{
-    answer_title: "Кеды",
+    answer_title: "Беговые кроссовки",
     type: "checkbox"
   }, {
-    answer_title: "Кеды",
+    answer_title: "Кроссовки для фитнеса",
     type: "checkbox"
   }, {
-    answer_title: "Кеды",
+    answer_title: "Баскетбольные кроссовки",
     type: "checkbox"
   }, {
-    answer_title: "Кеды",
+    answer_title: "Повседневные кроссовки",
     type: "checkbox"
   }, {
-    answer_title: "Кеды",
+    answer_title: "Футбольные бутсы",
     type: "checkbox"
   }, {
-    answer_title: "Кеды",
+    answer_title: "Сланцы",
     type: "checkbox"
   }]
 }, {
@@ -3746,7 +3746,7 @@ var quizTemplate = function quizTemplate() {
   var nextBtnText = options.nextBtnText;
   var answers = data.answers.map(function (item) {
     if (item.type === "checkbox") {
-      return "\n    <li class=\"quiz-question__item\">\n      <img src=\"img/sneaker.jpg\" alt=\"\">\n      <label class=\"custom-checkbox\">\n      <input type=\"".concat(item.type, "\" class=\"custom-checkbox__field quiz-question__answer\" data-valid=\"false\" name=\"").concat(data.answer_alias, "\">\n      <span class=\"custom-checkbox__content\">").concat(item.answer_title, "</span>\n    </label>\n    </li>\n\t\t");
+      return "\n    <li class=\"quiz-question__item\">\n      <label class=\"custom-checkbox\">\n      <input type=\"".concat(item.type, "\" class=\"custom-checkbox__field quiz-question__answer\" data-valid=\"false\" name=\"").concat(data.answer_alias, "\">\n      <span class=\"custom-checkbox__content\">").concat(item.answer_title, "</span>\n    </label>\n    </li>\n\t\t");
     } else if (item.type === "textarea") {
       return "\n        <label class=\"quiz-question__label\">\n          <textarea placeholder=\"".concat(item.answer_title, "\" class=\"quiz-question__message\"></textarea>\n        </label>\n\t\t");
     } else {

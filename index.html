@@ -51,6 +51,16 @@
           </li>
         </ul>
       </nav>
+
+      <button
+        class="burger"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+        data-burger
+      >
+        <span class="burger__line"></span>
+      </button>
+
       <div class="cart header__cart">
         <button class="btn-reset cart__btn cart__btn--inactive">
           <svg class="">
@@ -76,15 +86,6 @@
           </div>
         </div>
       </div>
-
-      <button
-        class="burger"
-        aria-label="Открыть меню"
-        aria-expanded="false"
-        data-burger
-      >
-        <span class="burger__line"></span>
-      </button>
     </div>
   </div>
 </header>
@@ -378,25 +379,46 @@
     <ul class="faq__list list-reset">
       <li class="faq-accordion">
         <button class="faq-accordion__control btn-reset" aria-expanded="false">
-          <span class="faq-accordion__title">Вопрос 1</span>
+          <span class="faq-accordion__title">Как оформить заказ</span>
           <span class="faq-accordion__icon"></span>
         </button>
         <div class="faq-accordion__content" aria-hidden="true">
           <p>
-            А это ответ 1: в комплексе функционируют 6 детских садов с
-            площадками, воспитателями и всякими другими людьми
+            Оформить заказ можно в телефонном режиме, или же выбрать на сайте
+            интересующий товар и оформить заказ, нажав кнопку «Купить».
           </p>
         </div>
       </li>
       <li class="faq-accordion">
         <button class="faq-accordion__control btn-reset" aria-expanded="false">
-          <span class="faq-accordion__title">Вопрос 1</span>
+          <span class="faq-accordion__title"
+            >Что делать, если я получил товар в поврежденном состоянии?</span
+          >
           <span class="faq-accordion__icon"></span>
         </button>
         <div class="faq-accordion__content" aria-hidden="true">
           <p>
-            А это ответ 1: в комплексе функционируют 6 детских садов с
-            площадками, воспитателями и всякими другими людьми
+            При получении товара на службе доставки, его обязательно необходимо
+            проверить на внешние повреждения. В случае обнаружения поврежденного
+            товара, требуется оформить акт, согласно установленным правилам
+            курьерской службы. После чего обязательно уведомить нас о
+            сложившейся ситуации.
+          </p>
+        </div>
+      </li>
+
+      <li class="faq-accordion">
+        <button class="faq-accordion__control btn-reset" aria-expanded="false">
+          <span class="faq-accordion__title"
+            >Высокого ли качества, продаваемые нами товары?</span
+          >
+          <span class="faq-accordion__icon"></span>
+        </button>
+        <div class="faq-accordion__content" aria-hidden="true">
+          <p>
+            Да, безусловно! Мы являемся официальными дилерами всех
+            представленных в нашей сети торговых марок. Мы не продаем
+            неоригинальные и контрафактные товары.
           </p>
         </div>
       </li>
@@ -429,7 +451,7 @@
             </span>
           </span>
         </h3>
-        <a href="tel:+7800789789" class="contacts__phone">+ 7 800 789 89 89</a>
+        <a href="tel:+7800789789" class="contacts__phone">+7 (800-97) 8-78-78</a>
         <span class="contacts__adress"
           >г. Санкт-Петербург, Комсомольская, 43, к1</span
         >
@@ -438,9 +460,7 @@
       <div class="contacts__item">
         <h3 class="contacts__subtitle">Отдел продаж</h3>
         <a href="tel:+7800789789" class="contacts__phone">+ 7 800 789 89 89</a>
-        <span class="contacts__adress"
-          >г. Санкт-Петербург, Комсомольская, 43, к1</span
-        >
+        <span class="contacts__adress">г. Москва, Пушкинская, 18 к2</span>
       </div>
 
       <div class="social">
@@ -451,17 +471,15 @@
               target="_blank"
               class="social__link social__link--vk"
               aria-label="Наша страничка во Вконтакте"
-              ></a
-            >
+            ></a>
           </li>
           <li class="social__item">
             <a
               href="#"
               target="_blank"
               class="social__link social__link--insta"
-              aria-label="Наша страничка в Инестаграме"
-              ></a
-            >
+              aria-label="Наша страничка в Инстаграме"
+            ></a>
           </li>
         </ul>
       </div>
