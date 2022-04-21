@@ -47,6 +47,14 @@
     }
   }
 
+  &__list {
+    display: none;
+
+    &--visible {
+      display: block;
+    }
+  }
+
   &__quantity {
     margin-bottom: $second-offset;
   }
@@ -66,15 +74,19 @@
       fill: currentColor;
       object-fit: cover;
       margin-left: 5px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &--active {
+      svg {
+        transform: rotate(180deg);
+      }
     }
   }
 
-  &__item {
+  .mini-cart__item {
     &:not(:last-child) {
-      margin-bottom: 14px;
+      margin-bottom: $second-offset;
     }
-  }
-
-  &__form {
   }
 }

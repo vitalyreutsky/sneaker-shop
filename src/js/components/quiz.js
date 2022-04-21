@@ -152,11 +152,17 @@ class Quiz {
         );
 
         if (this.counter + 1 == this.dataLength) {
+          document.querySelector(".quiz-question-answers").style.display =
+            "block";
         }
       } else {
         console.log("А все! конец!");
         document.querySelector(".quiz-questions").style.display = "none";
-        document.querySelector(".asd").style.display = "block";
+        document.querySelector(".last-question").style.display = "block";
+        document.querySelector(".quiz__title").textContent =
+          "Ваша подборка готова!";
+        document.querySelector(".quiz__descr").textContent =
+          "Оставьте свои контактные данные, чтобы мы могли отправить подготовленный для вас каталог";
       }
     } else {
       console.log("Не валидно!");

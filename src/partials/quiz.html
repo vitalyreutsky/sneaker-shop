@@ -9,7 +9,37 @@
       </p>
       <form class="quiz-form" method="POST">
         <div class="quiz-questions"></div>
-        <div class="asd">fssgfs</div>
+        <div class="last-question">
+          <div class="last-question__form">
+            <h3 class="last-question__title">Получить предложение</h3>
+            <p class="last-question__descr">
+              Получите подборку подходящих для вас моделей на почту
+            </p>
+            <input
+              type="text"
+              name="Имя"
+              class="input-reset form__input last-question__input"
+              placeholder="Ваше имя"
+            />
+
+            <input
+              type="email"
+              name="E-mail"
+              class="input-reset form__input last-question__input"
+              placeholder="Ваш e-mail"
+            />
+            <button class="btn btn-reset btn--primary last-question__btn">
+              Получить
+            </button>
+            <div class="last-question__decorate">
+              <picture>
+                <source srcset="img/iphone.avif" type="image/avif">
+                <source srcset="img/iphone.webp" type="image/webp">
+                <img loading="lazy" src="img/iphone.png" class="image" alt="Decorate">
+              </picture>
+            </div>
+          </div>
+        </div>
       </form>
     </div>
   </div>

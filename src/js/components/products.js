@@ -25,6 +25,7 @@ const prodModalChars = prodModal.querySelector(".prod-chars");
 const prodModalVideo = prodModal.querySelector(".prod-modal__video");
 let prodQuantity = 5;
 let dataLength = null;
+let modal = null;
 
 const normalPrice = (str) => {
   return String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ");
@@ -70,7 +71,7 @@ if (catalogList) {
                   <h3 class="product__title">${item.title}</h3>
                   <span class="product__price">${normalPrice(
                     item.price
-                  )} р</span>
+                  )} $</span>
                 </article>
               </li>
             `;
@@ -85,7 +86,7 @@ if (catalogList) {
 
         cartLogic();
 
-        const modal = new GraphModal({
+        modal = new GraphModal({
           isOpen: (modal) => {
             if (modal.modalContainer.classList.contains("prod-modal")) {
               const openBtnId = modal.previousActiveElement.dataset.id;
@@ -173,9 +174,9 @@ if (catalogList) {
               <div class="modal-info__price">
                 <span class="modal-info__current-price">${
                   dataItem.price
-                } р</span>
+                } $</span>
                 <span class="modal-info__old-price">${
-                  dataItem.oldPrice ? dataItem.oldPrice + "р" : ""
+                  dataItem.oldPrice ? dataItem.oldPrice + "$" : ""
                 }</span>
               </div>
             `;
@@ -264,7 +265,7 @@ const minusFullPrice = (currentPrice) => {
 };
 
 const printFullPrice = () => {
-  fullPrice.textContent = `${normalPrice(price)} р`;
+  fullPrice.textContent = `${normalPrice(price)} $`;
 };
 
 const printQuantity = (num) => {
@@ -292,9 +293,10 @@ const loadCartData = (id = 1) => {
                       <h3 class="mini-product__title">${dataItem.title}</h3>
                       <span class="mini-product__price">${normalPrice(
                         dataItem.price
-                      )} р</span>
+                      )} $</span>
                     </div>
                     <button class="btn-reset mini-product__delete" aria-label="Удалить товар">
+                    Удалить
                       <svg>
                         <use xlink:href="img/sprite.svg#delete"></use>
                       </svg>
@@ -372,3 +374,67 @@ const cartLogic = () => {
     }
   });
 };
+
+const openOrderModal = document.querySelector(".mini-cart__btn");
+const orderModalList = document.querySelector(".cart-modal-order__list");
+const orderModalQuantity = document.querySelector(
+  ".cart-modal-order__quantity span"
+);
+const orderModalSumm = document.querySelector(".cart-modal-order__summ span");
+const orderModalShow = document.querySelector(".cart-modal-order__show");
+
+openOrderModal.addEventListener("click", () => {
+  const productsHtml = document.querySelector(".mini-cart__list").innerHTML;
+  orderModalList.innerHTML = productsHtml;
+
+  orderModalQuantity.textContent = `${
+    document.querySelectorAll(".mini-cart__list .mini-cart__item").length
+  } шт`;
+  orderModalSumm.textContent = fullPrice.textContent;
+});
+
+orderModalShow.addEventListener("click", () => {
+  if (orderModalList.classList.contains("cart-modal-order__list--visible")) {
+    orderModalList.classList.remove("cart-modal-order__list--visible");
+    orderModalShow.classList.remove("cart-modal-order__show--active");
+  } else {
+    orderModalList.classList.add("cart-modal-order__list--visible");
+    orderModalShow.classList.add("cart-modal-order__show--active");
+  }
+});
+
+//ДОДЕДАТЬ УДАЛЕНИЕ ИЗ МОДАЛКИ
+//orderModalList.addEventListener("click", (e) => {
+//  if (e.target.classList.contains("mini-product__delete")) {
+//    const self = e.target;
+//    const parent = self.closest(".mini-cart__item");
+//    const price = parseInt(
+//      priceWithoutSpaces(
+//        parent.querySelector(".mini-product__price").textContent
+//      )
+//    );
+//    const id = parent.dataset.id;
+
+//    document
+//      .querySelector(`.add-to-cart-btn[data-id="${id}"]`)
+//      .classList.remove("product__btn--disabled");
+
+//    parent.remove();
+
+//    minusFullPrice(price);
+//    printFullPrice();
+
+//    let num = document.querySelectorAll(
+//      ".cart-modal-order__list .mini-cart__item"
+//    ).length;
+
+//    if (num == 0) {
+//      cartCount.classList.remove("cart__count--visible");
+//      document
+//        .querySelector(".mini-cart")
+//        .classList.remove("mini-cart--visible");
+//    }
+
+//    printQuantity(num);
+//  }
+//});

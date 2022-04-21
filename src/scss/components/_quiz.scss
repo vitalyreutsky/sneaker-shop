@@ -26,6 +26,19 @@
     font: $prehigh-book;
     color: $color-main;
   }
+
+  &__message {
+    border: none;
+    width: 500px;
+    height: 350px;
+
+    background-color: $color-white;
+    color: $color-cameo;
+    padding: $second-offset;
+    border-radius: 4px;
+    resize: none;
+  }
+
   &__answers {
     padding-bottom: $main-offset;
     display: grid;
@@ -53,6 +66,46 @@
   padding-top: $second-offset;
 }
 
-.asd {
+.last-question {
   display: none;
+  padding-top: $second-offset;
+  &__form {
+    position: relative;
+    max-width: 650px;
+    border-radius: 4px;
+    background: $color-cameo;
+    padding: $main-offset;
+  }
+
+  &__decorate {
+    position: absolute;
+    top: -2px;
+    right: -185px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: $small-offset;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 140%;
+    color: $color-white;
+  }
+
+  &__descr {
+    margin: 0;
+    margin-bottom: $second-offset;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: $color-white;
+  }
+
+  &__input {
+    max-width: 500px;
+  }
+
+  &__btn {
+    max-width: 500px;
+  }
 }
