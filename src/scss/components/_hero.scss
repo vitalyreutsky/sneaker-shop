@@ -36,6 +36,7 @@
 
     @include small-tablet {
       max-width: 100%;
+      line-height: 1.1;
     }
   }
   &__descr {
@@ -47,6 +48,7 @@
 
     @include small-tablet {
       max-width: 100%;
+      line-height: 1.3;
     }
   }
 

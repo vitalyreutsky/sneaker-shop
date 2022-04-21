@@ -1,6 +1,7 @@
 import clamp from "clamp-js";
 import GraphModal from "graph-modal";
 import Swiper, { Navigation, Pagination } from "swiper";
+import axios from "axios";
 
 Swiper.use([Navigation, Pagination]);
 const prodSlider = new Swiper(".modal-slider__container", {
@@ -33,9 +34,10 @@ const normalPrice = (str) => {
 
 if (catalogList) {
   const loadProducts = (quantity = 5) => {
-    fetch("../data/data.json")
+    axios
+      .get("https://vitalyreutsky.github.io/json-for-sneaker-shop/data.json")
       .then((response) => {
-        return response.json();
+        return response.data;
       })
       .then((data) => {
         dataLength = data.length;
@@ -125,9 +127,10 @@ if (catalogList) {
   loadProducts(prodQuantity);
 
   const loadModalData = (id = 1) => {
-    fetch("../data/data.json")
+    axios
+      .get("https://vitalyreutsky.github.io/json-for-sneaker-shop/data.json")
       .then((response) => {
-        return response.json();
+        return response.data;
       })
       .then((data) => {
         prodModalSlider.innerHTML = "";
@@ -295,9 +298,10 @@ const printQuantity = (num) => {
 };
 
 const loadCartData = (id = 1) => {
-  fetch("../data/data.json")
+  axios
+    .get("https://vitalyreutsky.github.io/json-for-sneaker-shop/data.json")
     .then((response) => {
-      return response.json();
+      return response.data;
     })
     .then((data) => {
       for (let dataItem of data) {

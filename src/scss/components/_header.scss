@@ -47,17 +47,20 @@
       top: 0;
       z-index: 10;
       height: 100%;
-      width: 50%;
+      width: 100%;
       background-color: $color-eastbay;
-      padding: $main-offset 0 $second-offset $second-offset;
+      padding: $big-offset 0;
+      overflow-y: auto;
 
       .nav__list {
         flex-direction: column;
+        align-items: center;
       }
       .nav__item {
         &:not(:last-child) {
-          margin-bottom: $second-offset;
+          margin-bottom: 30px;
         }
+        margin-right: 0 !important;
       }
       .nav__link {
         font: $prehigh-regular;
@@ -72,12 +75,11 @@
 
   @include tablet {
     display: block;
-    position: absolute;
-    top: 17px;
-    right: 15px;
-    z-index: 11;
+    z-index: 1000;
     color: $color-white;
     --burger-line-height: 3px;
+    height: 23px;
+    transform: translateX($second-offset);
   }
 }
 

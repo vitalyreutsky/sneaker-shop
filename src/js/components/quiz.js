@@ -5,27 +5,27 @@ const quizData = [
     answer_alias: "type",
     answers: [
       {
-        answer_title: "Кеды",
+        answer_title: "Беговые кроссовки",
         type: "checkbox",
       },
       {
-        answer_title: "Кеды",
+        answer_title: "Кроссовки для фитнеса",
         type: "checkbox",
       },
       {
-        answer_title: "Кеды",
+        answer_title: "Баскетбольные кроссовки",
         type: "checkbox",
       },
       {
-        answer_title: "Кеды",
+        answer_title: "Повседневные кроссовки",
         type: "checkbox",
       },
       {
-        answer_title: "Кеды",
+        answer_title: "Футбольные бутсы",
         type: "checkbox",
       },
       {
-        answer_title: "Кеды",
+        answer_title: "Сланцы",
         type: "checkbox",
       },
     ],
@@ -77,7 +77,6 @@ const quizTemplate = (data = [], dataLength = 0, options) => {
     if (item.type === "checkbox") {
       return `
     <li class="quiz-question__item">
-      <img src="img/sneaker.jpg" alt="">
       <label class="custom-checkbox">
       <input type="${item.type}" class="custom-checkbox__field quiz-question__answer" data-valid="false" name="${data.answer_alias}">
       <span class="custom-checkbox__content">${item.answer_title}</span>
