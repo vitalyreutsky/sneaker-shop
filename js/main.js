@@ -3452,8 +3452,8 @@ if (catalogList) {
             var sizes = dataItem.sizes.map(function (size, idx) {
               return "\n                <li class=\"modal-sizes__item\">\n                  <button class=\"btn-reset modal-sizes__btn\">".concat(size, "</button>\n                </li>\n              ");
             });
-            prodModalSlider.innerHTML = slides.join("");
-            prodModalPreview.innerHTML = preview.join("");
+            prodModalSlider.innerHTML = slides.join(" ");
+            prodModalPreview.innerHTML = preview.join(" ");
             prodModalInfo.innerHTML = "\n              <h3 class=\"modal-info__title\">".concat(dataItem.title, "</h3>\n              <div class=\"modal-info__rate\">\n              <svg>\n                <use xlink:href=\"img/sprite.svg#rate\"></use>\n              </svg>\n              <svg>\n                <use xlink:href=\"img/sprite.svg#rate\"></use>\n              </svg>\n              <svg>\n                <use xlink:href=\"img/sprite.svg#rate\"></use>\n              </svg>\n              <svg>\n                <use xlink:href=\"img/sprite.svg#rate\"></use>\n              </svg>\n              <svg>\n                <use xlink:href=\"img/sprite.svg#rate\"></use>\n              </svg>\n              </div>\n              <div class=\"modal-info__sizes\">\n                <span class=\"modal-info__subtitle\">\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0440\u0430\u0437\u043C\u0435\u0440</span>\n                <ul class=\"list-reset modal-info__sizes-list modal-sizes\">\n                  ").concat(sizes.join(""), "\n                </ul>\n              </div>\n              <div class=\"modal-info__price\">\n                <span class=\"modal-info__current-price\">").concat(dataItem.price, " $</span>\n                <span class=\"modal-info__old-price\">").concat(dataItem.oldPrice ? dataItem.oldPrice + "$" : "", "</span>\n              </div>\n            ");
             prodModalDescr.textContent = dataItem.description;
             var charsItems = "";
