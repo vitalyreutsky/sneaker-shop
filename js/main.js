@@ -3377,7 +3377,8 @@ var normalPrice = function normalPrice(str) {
 };
 
 if (catalogList) {
-  var loadProducts = function loadProducts(quantity) {
+  var loadProducts = function loadProducts() {
+    var quantity = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 5;
     axios__WEBPACK_IMPORTED_MODULE_3___default().get("https://vitalyreutsky.github.io/json-for-sneaker-shop/data.json").then(function (response) {
       return response.data;
     }).then(function (data) {
@@ -3423,7 +3424,7 @@ if (catalogList) {
 
   loadProducts(prodQuantity);
 
-  var loadModalData = function loadModalData(id) {
+  var loadModalData = function loadModalData(key) {
     axios__WEBPACK_IMPORTED_MODULE_3___default().get("https://vitalyreutsky.github.io/json-for-sneaker-shop/data.json").then(function (response) {
       return response.data;
     }).then(function (data) {
@@ -3440,7 +3441,7 @@ if (catalogList) {
         var _loop = function _loop() {
           var dataItem = _step.value;
 
-          if (dataItem.id == id) {
+          if (dataItem.id == key) {
             var slides = dataItem.gallery.map(function (image, idx) {
               return "\n                <div class=\"swiper-slide\" data-index=\"".concat(idx, "\">\n                  <img src=\"").concat(image, "\" alt=\"\">\n                </div>\n              ");
             });
