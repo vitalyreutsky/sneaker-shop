@@ -3413,7 +3413,8 @@ if (catalogList) {
       modal = new graph_modal__WEBPACK_IMPORTED_MODULE_1__["default"]({
         isOpen: function isOpen(modal) {
           if (modal.modalContainer.classList.contains("prod-modal")) {
-            var openBtnId = modal.previousActiveElement.dataset.id = 2;
+            var openBtnId = modal.previousActiveElement.dataset.id;
+            console.log(openBtnId);
             loadModalData(openBtnId);
             prodSlider.update();
           }
@@ -3424,8 +3425,7 @@ if (catalogList) {
 
   loadProducts(prodQuantity);
 
-  var loadModalData = function loadModalData() {
-    var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+  var loadModalData = function loadModalData(id) {
     axios__WEBPACK_IMPORTED_MODULE_3___default().get("https://vitalyreutsky.github.io/json-for-sneaker-shop/data.json").then(function (response) {
       return response.data;
     }).then(function (data) {
