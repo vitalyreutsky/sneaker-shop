@@ -3388,7 +3388,7 @@ if (catalogList) {
       for (var i = 0; i < dataLength; i++) {
         if (i < quantity) {
           var item = data[i];
-          catalogList.innerHTML += "\n              <li class=\"catalog-list__item\">\n                <article class=\"product\">\n                  <div class=\"product__image\">\n                    <img src=\"".concat(item.mainImage, "\" alt=\"").concat(item.title, "\">\n                    <div class=\"product__btns\">\n                      <button class=\"btn-reset product__btn\" data-graph-path=\"prod-modal\" data-id=\"").concat(item.id, "\" aria-label=\"\u041F\u043E\u043A\u0430\u0437\u0430\u0442\u044C \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u0442\u043E\u0432\u0430\u0440\u0435\">\n                        <svg>\n                          <use xlink:href=\"img/sprite.svg#eye\"></use>\n                        </svg>\n                      </button>\n                      <button class=\"btn-reset product__btn add-to-cart-btn\" data-id=\"").concat(item.id, "\" aria-label=\"\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0442\u043E\u0432\u0430\u0440 \u0432 \u043A\u043E\u0440\u0437\u0438\u043D\u0443\">\n                        <svg>\n                          <use xlink:href=\"img/sprite.svg#cart\"></use>\n                        </svg>\n                      </button>\n                    </div>\n                  </div>\n                  <h3 class=\"product__title\">").concat(item.title, "</h3>\n                  <span class=\"product__price\">").concat(normalPrice(item.price), " $</span>\n                </article>\n              </li>\n            ");
+          catalogList.innerHTML += "\n              <li class=\"catalog-list__item\">\n                <article class=\"product\">\n                  <div class=\"product__image\">\n                    <img src=\"".concat(item.mainImage, "\" alt=\"").concat(item.title, "\">\n                    <div class=\"product__btns\">\n                      <button class=\"btn-reset product__btn show-btn\" data-graph-path=\"prod-modal\" data-id=\"").concat(item.id, "\" aria-label=\"\u041F\u043E\u043A\u0430\u0437\u0430\u0442\u044C \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u0442\u043E\u0432\u0430\u0440\u0435\">\n                        <svg>\n                          <use xlink:href=\"img/sprite.svg#eye\"></use>\n                        </svg>\n                      </button>\n                      <button class=\"btn-reset product__btn add-to-cart-btn\" data-id=\"").concat(item.id, "\" aria-label=\"\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0442\u043E\u0432\u0430\u0440 \u0432 \u043A\u043E\u0440\u0437\u0438\u043D\u0443\">\n                        <svg>\n                          <use xlink:href=\"img/sprite.svg#cart\"></use>\n                        </svg>\n                      </button>\n                    </div>\n                  </div>\n                  <h3 class=\"product__title\">").concat(item.title, "</h3>\n                  <span class=\"product__price\">").concat(normalPrice(item.price), " $</span>\n                </article>\n              </li>\n            ");
         }
       }
     }).then(function () {
@@ -3414,8 +3414,7 @@ if (catalogList) {
         isOpen: function isOpen(modal) {
           if (modal.modalContainer.classList.contains("prod-modal")) {
             var openBtnId = modal.previousActiveElement.dataset.id;
-            loadModalData(openBtnId);
-            prodSlider.update();
+            loadModalData(openBtnId); //prodSlider.update();
           }
         }
       });
@@ -3452,8 +3451,8 @@ if (catalogList) {
             var sizes = dataItem.sizes.map(function (size, idx) {
               return "\n                <li class=\"modal-sizes__item\">\n                  <button class=\"btn-reset modal-sizes__btn\">".concat(size, "</button>\n                </li>\n              ");
             });
-            prodModalSlider.innerHTML = slides.join(" ");
-            prodModalPreview.innerHTML = preview.join(" ");
+            prodModalSlider.innerHTML = slides.join("");
+            prodModalPreview.innerHTML = preview.join("");
             prodModalInfo.innerHTML = "\n              <h3 class=\"modal-info__title\">".concat(dataItem.title, "</h3>\n              <div class=\"modal-info__rate\">\n              <svg>\n                <use xlink:href=\"img/sprite.svg#rate\"></use>\n              </svg>\n              <svg>\n                <use xlink:href=\"img/sprite.svg#rate\"></use>\n              </svg>\n              <svg>\n                <use xlink:href=\"img/sprite.svg#rate\"></use>\n              </svg>\n              <svg>\n                <use xlink:href=\"img/sprite.svg#rate\"></use>\n              </svg>\n              <svg>\n                <use xlink:href=\"img/sprite.svg#rate\"></use>\n              </svg>\n              </div>\n              <div class=\"modal-info__sizes\">\n                <span class=\"modal-info__subtitle\">\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0440\u0430\u0437\u043C\u0435\u0440</span>\n                <ul class=\"list-reset modal-info__sizes-list modal-sizes\">\n                  ").concat(sizes.join(""), "\n                </ul>\n              </div>\n              <div class=\"modal-info__price\">\n                <span class=\"modal-info__current-price\">").concat(dataItem.price, " $</span>\n                <span class=\"modal-info__old-price\">").concat(dataItem.oldPrice ? dataItem.oldPrice + "$" : "", "</span>\n              </div>\n            ");
             prodModalDescr.textContent = dataItem.description;
             var charsItems = "";
