@@ -606,7 +606,11 @@
           <div class="modal-slider__container">
             <div class="swiper-wrapper"></div>
           </div>
-          <div class="modal-preview"></div>
+          <div class="modal-preview">
+            <div class="modal-preview__item" data-index="0"></div>
+            <div class="modal-preview__item" data-index="1"></div>
+            <div class="modal-preview__item" data-index="2"></div>
+          </div>
         </div>
         <div class="modal-info">
           <div class="modal-info__top">
@@ -615,7 +619,12 @@
               >В наличии: <span>13 шт</span></span
             >
           </div>
-          <div class="modal-info__wrapper"></div>
+          <div class="modal-info__wrapper">
+            <div class="modal-info__price">
+              <span class="modal-info__current-price"></span>
+              <span class="modal-info__old-price"></span>
+            </div>
+          </div>
           <button class="btn btn-reset btn--primary modal-info__order">
             Заказать
           </button>
