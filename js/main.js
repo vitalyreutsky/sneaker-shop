@@ -3414,7 +3414,6 @@ if (catalogList) {
         isOpen: function isOpen(modal) {
           if (modal.modalContainer.classList.contains("prod-modal")) {
             var openBtnId = modal.previousActiveElement.dataset.id;
-            console.log(openBtnId);
             loadModalData(openBtnId);
             prodSlider.update();
           }
