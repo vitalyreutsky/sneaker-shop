@@ -6,3 +6,4 @@ import "./components/products";
 import "./components/custom-scroll";
 import "./components/cart";
 import "./components/burger";
+import "./components/show-filter";

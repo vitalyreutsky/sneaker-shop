@@ -17,7 +17,7 @@ import { mobileCheck } from "./functions/mobile-check";
 // window.addEventListener('resize', func);
 
 // Фикс фулскрин-блоков
-// import './functions/fix-fullheight';
+import "./functions/fix-fullheight";
 
 // Реализация остановки скролла (не забудьте вызвать функцию)
 // import { disableScroll } from './functions/disable-scroll';
@@ -51,12 +51,3 @@ import { mobileCheck } from "./functions/mobile-check";
 //   console.log(e.detail);
 //   console.log(e.detail.dir);
 // });
-
-// import { validateForms } from './functions/validate-forms';
-// const rules1 = [...];
-
-// const afterForm = () => {
-//   console.log('Произошла отправка, тут можно писать любые действия');
-// };
-
-// validateForms('.form-1', rules1, afterForm);

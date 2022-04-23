@@ -15,7 +15,7 @@
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 
-    @include mobile {
+    @include small-tablet {
       padding: $small-offset $small-offset 0px 0px;
       align-items: flex-start;
       justify-content: flex-end;

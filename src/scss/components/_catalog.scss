@@ -1,10 +1,24 @@
 .catalog {
+  position: relative;
   padding: $big-offset 0;
   &__left {
     grid-column: 3 span;
+    transition: transform 0.3s ease-in-out;
 
     @include tablet {
-      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      max-width: 55%;
+      border: 1px solid $color-grey;
+      border-radius: 4px;
+
+      transform: translateX(-100%);
+      z-index: 10;
+    }
+
+    &--visible {
+      transform: translateX(0);
     }
   }
   &__grid {
@@ -63,6 +77,20 @@
   }
   &__more {
     margin-top: $big-offset;
+  }
+}
+
+.catalog-title__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.catalog-filter {
+  display: none;
+
+  @include tablet {
+    display: block;
+    text-decoration: underline;
   }
 }
 
