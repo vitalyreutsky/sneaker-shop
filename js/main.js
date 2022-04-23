@@ -3368,7 +3368,6 @@ var prodModalPreview = prodModal.querySelector(".modal-slider .modal-preview");
 var prodModalInfo = prodModal.querySelector(".modal-info__wrapper");
 var prodModalDescr = prodModal.querySelector(".modal-prod-descr");
 var prodModalChars = prodModal.querySelector(".prod-chars");
-var prodModalVideo = prodModal.querySelector(".prod-modal__video");
 var prodQuantity = 5;
 var dataLength = null;
 var modal = null;
@@ -3435,7 +3434,6 @@ if (catalogList) {
       prodModalInfo.innerHTML = "";
       prodModalDescr.textContent = "";
       prodModalChars.innerHTML = "";
-      prodModalVideo.innerHTML = "";
 
       var _iterator = _createForOfIteratorHelper(data),
           _step;
@@ -3463,13 +3461,6 @@ if (catalogList) {
               charsItems += "<p class=\"prod-bottom__descr prod-chars__item\">".concat(key, ": ").concat(dataItem.chars[key], "</p>");
             });
             prodModalChars.innerHTML = charsItems;
-
-            if (dataItem.video) {
-              prodModalVideo.style.display = "block";
-              prodModalVideo.innerHTML = "\n                <iframe src=\"".concat(dataItem.video, "\"\n                allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\"\n                allowfullscreen></iframe>\n              ");
-            } else {
-              prodModalVideo.style.display = "none";
-            }
           }
         };
 
