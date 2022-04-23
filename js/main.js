@@ -3424,7 +3424,8 @@ if (catalogList) {
 
   loadProducts(prodQuantity);
 
-  var loadModalData = function loadModalData(id) {
+  var loadModalData = function loadModalData() {
+    var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 5;
     axios__WEBPACK_IMPORTED_MODULE_3___default().get("https://vitalyreutsky.github.io/json-for-sneaker-shop/data.json").then(function (response) {
       return response.data;
     }).then(function (data) {
