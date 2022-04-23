@@ -1,4 +1,5 @@
 .cart-modal {
+  background-color: $color-eastbay-dark;
   border-radius: 4px;
   padding: $main-offset;
   width: 700px;
@@ -18,13 +19,13 @@
     margin: 0;
     font: $prehigh-regular;
     font-weight: 700;
-    color: $color-main;
+    color: $color-white;
   }
 
   &__order-number {
     font: $small-book;
     line-height: 14px;
-    color: $color-grey;
+    color: $color-white;
   }
 
   &__input {
@@ -50,11 +51,10 @@
   &__top {
     font: $middle-book;
     line-height: 14px;
-    color: $color-grey;
-
+    color: $color-main;
     span {
       font-weight: 700;
-      color: $color-main;
+      color: $color-white;
     }
 
     @include mobile {
@@ -82,7 +82,7 @@
     display: inline-flex;
     align-items: center;
     margin-bottom: $second-offset;
-    color: $color-main;
+    color: $color-white;
     svg {
       width: 15px;
       height: 15px;

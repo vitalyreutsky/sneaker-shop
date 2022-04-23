@@ -1,6 +1,6 @@
 <div class="graph-modal modal">
   <div
-    class="graph-modal__container modal__container prod-modal"
+    class="prod-modal graph-modal__container modal__container"
     role="dialog"
     aria-modal="true"
     data-graph-target="prod-modal"
@@ -19,25 +19,25 @@
           <div class="modal-slider__container">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="img/sneaker.jpg" alt="" />
+                <img src="img/product-image.jpg" alt="" />
               </div>
               <div class="swiper-slide">
-                <img src="img/sneaker.jpg" alt="" />
+                <img src="img/product-image.jpg" alt="" />
               </div>
               <div class="swiper-slide">
-                <img src="img/sneaker.jpg" alt="" />
+                <img src="img/product-image.jpg" alt="" />
               </div>
             </div>
           </div>
           <div class="modal-preview">
             <div class="modal-preview__item" data-index="0">
-              <img src="img/sneaker.jpg" alt="" />
+              <img src="img/product-image.jpg" alt="" />
             </div>
             <div class="modal-preview__item" data-index="1">
-              <img src="img/sneaker.jpg" alt="" />
+              <img src="img/product-image.jpg" alt="" />
             </div>
             <div class="modal-preview__item" data-index="2">
-              <img src="img/sneaker.jpg" alt="" />
+              <img src="img/product-image.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -53,21 +53,11 @@
               Женские кроссовки Puma Force 1 Shadow
             </h3>
             <div class="modal-info__rate">
-              <svg>
-                <use xlink:href="img/sprite.svg#rate"></use>
-              </svg>
-              <svg>
-                <use xlink:href="img/sprite.svg#rate"></use>
-              </svg>
-              <svg>
-                <use xlink:href="img/sprite.svg#rate"></use>
-              </svg>
-              <svg>
-                <use xlink:href="img/sprite.svg#rate"></use>
-              </svg>
-              <svg>
-                <use xlink:href="img/sprite.svg#rate"></use>
-              </svg>
+              <img src="img/star.svg" alt="Рейтинг 5 из 5" />
+              <img src="img/star.svg" alt="" />
+              <img src="img/star.svg" alt="" />
+              <img src="img/star.svg" alt="" />
+              <img src="img/star.svg" alt="" />
             </div>
             <div class="modal-info__sizes">
               <span class="modal-info__subtitle">Выберите размер</span>
@@ -127,7 +117,6 @@
           </div>
         </div>
       </div>
-      <div class="prod-modal__video"></div>
     </div>
   </div>
 
@@ -153,10 +142,10 @@
       <div class="cart-modal-order">
         <div class="cart-modal-order__top">
           <div class="cart-modal-order__quantity">
-            Товаров в заказе: <span>3 шт</span>
+            Товаров в заказе: <span></span>
           </div>
           <div class="cart-modal-order__summ">
-            Общая сумма заказа: <span>0 $</span>
+            Общая сумма заказа: <span></span>
           </div>
         </div>
         <div class="cart-modal-order__content">
@@ -166,38 +155,7 @@
               <use xlink:href="img/sprite.svg#angle"></use>
             </svg>
           </button>
-          <ul class="cart-modal-order__list list-reset">
-            <li class="cart-modal-order__item">
-              <article class="cart-modal-order__product cart-modal-product">
-                <div class="cart-modal-product__image">
-                  <picture>
-                    <source srcset="img/image.avif" type="image/avif" />
-                    <source srcset="img/image.webp" type="image/webp" />
-                    <img
-                      loading="lazy"
-                      src="img/image.png"
-                      class="image"
-                      alt=""
-                    />
-                  </picture>
-                </div>
-                <div class="cart-modal-product__content">
-                  <div class="cart-modal-product__text">
-                    <h3 class="cart-modal-product__title">
-                      Женские кроссовки Puma Force 1 Shadow
-                    </h3>
-                    <span class="cart-modal-product__price">0 $</span>
-                  </div>
-                  <button
-                    class="btn-reset cart-modal-product__delete"
-                    aria-label="Удалить товар"
-                  >
-                    Удалить
-                  </button>
-                </div>
-              </article>
-            </li>
-          </ul>
+          <ul class="cart-modal-order__list list-reset"></ul>
         </div>
       </div>
       <form action="#" class="form cart-modal-order__form">

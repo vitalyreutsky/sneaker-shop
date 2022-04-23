@@ -1,6 +1,6 @@
 .contacts {
   padding: $big-offset 0;
-  background-color: #f3f6f6;
+  background-color: $color-eastbay-dark;
   &__container {
     display: flex;
     align-items: flex-start;
@@ -40,7 +40,7 @@
     display: inline-block;
     margin-bottom: $small-offset;
     font: $middle-high-bold;
-    color: $color-main;
+    color: $color-white;
     outline: none;
     transition: color 0.3s ease-in-out;
 
@@ -60,6 +60,7 @@
   }
   &__adress {
     display: block;
+    color: $color-white;
 
     @include mobile {
       font-size: 14px;

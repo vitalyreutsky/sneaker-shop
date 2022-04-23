@@ -1,7 +1,8 @@
 .hero {
   padding: 100px 0px;
   height: 530px;
-  background-color: $color-eastbay;
+  background-color: $color-eastbay-dark;
+
   &__container {
     position: relative;
     z-index: 2;

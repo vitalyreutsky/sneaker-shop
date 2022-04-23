@@ -14,6 +14,7 @@
   border-radius: 4px;
   padding: $main-offset;
   width: 1140px;
+  background-color: $color-eastbay-dark;
 
   &__top {
     display: flex;
@@ -27,18 +28,6 @@
 
   &__bottom {
     margin-bottom: $main-offset;
-  }
-
-  &__video {
-    width: 100%;
-    height: 450px;
-    iframe {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border: none;
-      object-fit: cover;
-    }
   }
 
   @include tablet {
@@ -60,10 +49,13 @@
     width: 100%;
     overflow: hidden;
     font-size: 0;
+    border: 1px solid $color-white;
+    border-radius: 4px;
 
     img {
       width: 100%;
-      height: 450px;
+      height: 350px;
+      object-fit: cover;
     }
   }
 
@@ -118,7 +110,7 @@
     margin: 0;
     margin-bottom: $second-offset;
     font: $prehigh-book;
-    color: $color-main;
+    color: $color-white;
   }
 
   &__rate {
@@ -129,7 +121,7 @@
     display: inline-block;
     margin-bottom: $second-offset;
     font: $middle-book;
-    color: $color-main;
+    color: $color-white;
   }
 
   &__price {
@@ -140,14 +132,15 @@
   &__current-price {
     font: $middle-high-bold;
     line-height: 30px;
-    color: $color-main;
+    color: $color-white;
     margin-right: 32px;
   }
 
   &__old-price {
     font: $middle-book;
-    color: $color-grey;
+    color: $color-main;
     line-height: 16px;
+    text-decoration: line-through;
   }
 
   &__order {
@@ -186,7 +179,8 @@
     padding: 6px 0px;
     width: 70px;
     font: $small-book;
-    counter-reset: $color-main;
+    counter-reset: $color-white;
+    color: $color-white;
   }
 }
 
@@ -200,7 +194,7 @@
 
 .modal-preview {
   display: grid;
-  grid-template-columns: repeat(6, 70px);
+  grid-template-columns: repeat(6, 50px);
   gap: $second-offset;
 
   &__item {
@@ -208,6 +202,8 @@
     height: 75px;
     transition: opacity 0.3s;
     cursor: pointer;
+    border: 1px solid $color-white;
+    border-radius: 4px;
 
     img {
       width: 100%;
@@ -233,7 +229,7 @@
   &__item {
     padding-left: 25px;
     font: $small-book;
-    color: $color-grey;
+    color: $color-white;
 
     background-image: url("../img/check.svg");
     background-position: left center;
@@ -278,14 +274,14 @@
     margin: 0;
     margin-bottom: $second-offset;
     font: $prehigh-book;
-    color: $color-main;
+    color: $color-white;
   }
 
   &__descr {
     margin: 0;
     max-width: 450px;
     font: $middle-book;
-    color: $color-main;
+    color: $color-white;
   }
 
   @include small-tablet {

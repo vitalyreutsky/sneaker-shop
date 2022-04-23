@@ -17,13 +17,14 @@ const prodModal = document.querySelector(
 const prodModalSlider = prodModal.querySelector(
   ".modal-slider .swiper-wrapper"
 );
+
 const prodModalPreview = prodModal.querySelector(
   ".modal-slider .modal-preview"
 );
 const prodModalInfo = prodModal.querySelector(".modal-info__wrapper");
 const prodModalDescr = prodModal.querySelector(".modal-prod-descr");
 const prodModalChars = prodModal.querySelector(".prod-chars");
-const prodModalVideo = prodModal.querySelector(".prod-modal__video");
+
 let prodQuantity = 5;
 let dataLength = null;
 let modal = null;
@@ -54,7 +55,7 @@ if (catalogList) {
                   <div class="product__image">
                     <img src="${item.mainImage}" alt="${item.title}">
                     <div class="product__btns">
-                      <button class="btn-reset product__btn" data-graph-path="prod-modal" data-id="${
+                      <button class="btn-reset product__btn show-btn" data-graph-path="prod-modal" data-id="${
                         item.id
                       }" aria-label="Показать информацию о товаре">
                         <svg>
@@ -138,7 +139,6 @@ if (catalogList) {
         prodModalInfo.innerHTML = "";
         prodModalDescr.textContent = "";
         prodModalChars.innerHTML = "";
-        prodModalVideo.innerHTML = "";
 
         for (let dataItem of data) {
           if (dataItem.id == id) {
@@ -215,17 +215,6 @@ if (catalogList) {
             });
 
             prodModalChars.innerHTML = charsItems;
-
-            if (dataItem.video) {
-              prodModalVideo.style.display = "block";
-              prodModalVideo.innerHTML = `
-                <iframe src="${dataItem.video}"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-              `;
-            } else {
-              prodModalVideo.style.display = "none";
-            }
           }
         }
       })

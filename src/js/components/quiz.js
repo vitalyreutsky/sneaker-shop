@@ -48,11 +48,11 @@ const quizData = [
         type: "checkbox",
       },
       {
-        answer_title: "42-42",
+        answer_title: "42-43",
         type: "checkbox",
       },
       {
-        answer_title: "45 и больше",
+        answer_title: "44 и больше",
         type: "checkbox",
       },
     ],

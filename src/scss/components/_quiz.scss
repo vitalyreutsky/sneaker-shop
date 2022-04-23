@@ -3,7 +3,7 @@
   &__content {
     border-radius: 4px;
     padding: $main-offset 100px;
-    background-color: $color-bg;
+    background-color: $color-eastbay-dark;
 
     @include small-tablet {
       padding: $main-offset;
@@ -15,6 +15,7 @@
   }
   &__title {
     margin-bottom: $second-offset;
+    color: $color-white;
 
     @include mobile {
       font-size: 24px;
@@ -23,7 +24,7 @@
   }
 
   &__descr {
-    color: $color-jambo;
+    color: $color-white;
     border-bottom: 1px solid currentColor;
     margin: 0;
     padding: 0 0 $small-offset 0;
@@ -37,7 +38,7 @@
     margin: 0;
     margin-bottom: $second-offset;
     font: $prehigh-book;
-    color: $color-main;
+    color: $color-white;
   }
 
   &__label {
@@ -50,11 +51,10 @@
   &__message {
     border: none;
     width: 500px;
-    height: 150px;
 
     background-color: $color-white;
-    color: $color-cameo;
-    padding: $second-offset;
+    color: $color-black;
+    padding: $small-offset;
     border-radius: 4px;
     resize: none;
     outline: none;
@@ -67,7 +67,7 @@
   &__answers {
     padding-bottom: $main-offset;
     display: grid;
-    grid-auto-rows: 155px;
+    grid-auto-rows: 50px;
     grid-template-columns: repeat(3, 1fr);
     gap: $second-offset 70px;
 
@@ -95,7 +95,7 @@
   }
   &__count {
     font: $middle-book;
-    color: $color-jambo;
+    color: $color-white;
   }
 }
 
@@ -103,7 +103,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid $color-jambo;
+  border-top: 1px solid $color-white;
   padding-top: $second-offset;
 }
 
@@ -112,20 +112,12 @@
   padding-top: $second-offset;
   &__form {
     position: relative;
-    max-width: 650px;
+    max-width: 500px;
     border-radius: 4px;
-    background: $color-cameo;
-    padding: $small-offset;
   }
 
   &__decorate {
-    position: absolute;
-    top: -2px;
-    right: -185px;
-
-    @include small-tablet {
-      display: none;
-    }
+    display: none;
   }
 
   &__title {

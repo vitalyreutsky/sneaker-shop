@@ -15,6 +15,7 @@ html {
 }
 
 .page__body {
+  background-color: $color-eastbay;
   margin: 0;
   min-width: 320px;
   min-height: 100%;
@@ -85,9 +86,9 @@ a {
 
   &--thirdly {
     padding: 13px 30px;
-    color: $color-main;
+    color: $color-white;
     background: transparent;
-    border: 1px solid $color-main;
+    border: 1px solid $color-white;
 
     @include for-desktop {
       &:hover {
@@ -116,7 +117,7 @@ a {
 
 .title {
   font: $middle-high-bold;
-  color: $color-main;
+  color: $color-white;
   margin: 0;
   margin-bottom: $main-offset;
 }
@@ -125,7 +126,7 @@ a {
   @include custom-checkbox;
   &__content {
     font: $middle-book;
-    color: $color-main;
+    color: $color-white;
     padding-left: 35px;
     &::before {
       top: -3px;

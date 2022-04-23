@@ -12,8 +12,8 @@
 }
 
 .faq-accordion {
-  border-top: 1px solid $color-main;
-  border-bottom: 1px solid $color-main;
+  border-top: 1px solid $color-white;
+  border-bottom: 1px solid $color-white;
 
   &__icon {
     flex-shrink: 0;
@@ -41,7 +41,7 @@
     width: 100%;
     font: $prehigh-regular;
     text-align: left;
-    color: $color-main;
+    color: $color-white;
     background-color: transparent;
     cursor: pointer;
 
@@ -57,7 +57,7 @@
     max-height: 0;
     box-sizing: content-box;
     font: $middle-book;
-    color: rgba(36, 36, 36, 0.5);
+    color: $color-white;
     opacity: 0;
     transition: all 0.3s ease-out;
     will-change: max-height;

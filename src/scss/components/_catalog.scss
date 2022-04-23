@@ -21,6 +21,7 @@
   &__reset {
     outline: none;
     transition: $color-accent 0.3s ease-in-out;
+    color: $color-white;
 
     &:focus {
       color: $color-accent;
@@ -41,13 +42,13 @@
     margin: 0;
     margin-bottom: $second-offset;
     font: $prehigh-book;
-    color: $color-main;
+    color: $color-white;
   }
   &__caption {
     display: block;
     margin-bottom: $small-offset;
     font: $middle-book;
-    color: $color-main;
+    color: $color-white;
   }
   &__prod {
     margin-bottom: $second-offset;
@@ -83,7 +84,7 @@
 .catalog-filters {
   border-radius: 4px;
   padding: $second-offset;
-  background-color: $color-bg;
+  background-color: $color-eastbay-dark;
   &-btns {
     display: flex;
     flex-direction: column;
@@ -105,7 +106,7 @@
       bottom: 8px;
       width: 1px;
       height: 34px;
-      background-color: $color-grey;
+      background-color: $color-white;
       transform: translateX(-50%);
     }
   }
@@ -113,8 +114,8 @@
     outline: none;
     text-align: center;
     font: $middle-book;
-    color: $color-main;
-    border: 1px solid $color-grey;
+    color: $color-white;
+    border: 1px solid $color-white;
     width: 50%;
     height: 50px;
     background-color: transparent;
@@ -136,12 +137,12 @@
   }
 
   .noUi-target {
-    background-color: $color-main;
+    background-color: $color-white;
     box-shadow: none;
   }
 
   .noUi-connect {
-    background-color: $color-main;
+    background-color: $color-white;
   }
 
   .noUi-horizontal .noUi-handle {
@@ -156,7 +157,7 @@
     box-shadow: none;
     border-radius: 100px;
     cursor: pointer;
-    background-color: $color-main;
+    background-color: $color-white;
   }
 
   .noUi-handle::after,
@@ -165,6 +166,6 @@
   }
 
   .noUi-handle-lower {
-    right: -2px;
+    right: -3px;
   }
 }
