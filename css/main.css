@@ -1493,9 +1493,8 @@ a {
 @media (max-width: 1024px) {
   .catalog__left {
     position: absolute;
-    top: 60px;
+    top: 110px;
     left: 0;
-    max-width: 70%;
     border: 1px solid #b2b5bb;
     border-radius: 4px;
     -webkit-transform: translateX(-100%);
