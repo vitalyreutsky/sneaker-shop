@@ -7,9 +7,8 @@
 
     @include tablet {
       position: absolute;
-      top: 60px;
+      top: 110px;
       left: 0;
-      max-width: 55%;
       border: 1px solid $color-grey;
       border-radius: 4px;
 
@@ -84,12 +83,21 @@
   display: flex;
   justify-content: space-between;
 }
+.catalog__title {
+  margin: 0;
+  margin-bottom: $second-offset;
+}
+.catalog-title__more {
+  color: $color-grey;
+  margin-bottom: $main-offset;
+}
 
 .catalog-filter {
   display: none;
 
   @include tablet {
     display: block;
+    cursor: pointer;
     text-decoration: underline;
   }
 }
