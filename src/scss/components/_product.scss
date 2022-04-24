@@ -48,6 +48,14 @@
         }
       }
     }
+
+    @include mobile {
+      img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+    }
   }
 
   &__title {
@@ -80,6 +88,10 @@
     transition: background-color 0.3s ease-in-out;
     &:first-child {
       margin-right: $main-offset;
+
+      @include mobile {
+        display: none;
+      }
     }
 
     svg {
