@@ -36,8 +36,9 @@
     max-height: 293px;
     img {
       display: block;
-      height: 291px;
-      object-fit: contain;
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
     }
 
     @include for-desktop {
@@ -46,14 +47,6 @@
           opacity: 1;
           visibility: visible;
         }
-      }
-    }
-
-    @include mobile {
-      img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
       }
     }
   }
